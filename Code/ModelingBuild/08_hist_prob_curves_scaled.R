@@ -4,8 +4,6 @@ library(tidyverse)
 library(dplyr)
 library(sm)
 
-setwd("/Users/katieirving/Documents/git/flow_eco_mech")
-
 ## work flow
 ## histograms as probability
 ## density or probability?
@@ -15,11 +13,11 @@ setwd("/Users/katieirving/Documents/git/flow_eco_mech")
 ## Depth
 ## Adult
 
-ad_depth_con <- read.csv("output_data/05a_adult_depth_continuous.csv")
-ad_depth_cat <- read.csv("output_data/05a_adult_depth_categorical.csv")
-juv_depth_con <- read.csv("output_data/05a_juvenile_depth_continuous.csv")
-juv_depth_cat <- read.csv("output_data/05a_juvenile_depth_categorical.csv")
-sp_depth_cat <- read.csv("output_data/05a_spawning_depth_continuous.csv")
+ad_depth_con <- read.csv("output_data/bio/01_adult_depth_continuous_updated.csv")
+ad_depth_cat <- read.csv("output_data/bio/01_adult_depth_categorical.csv")
+juv_depth_con <- read.csv("output_data/bio/01_juvenile_depth_continous.csv")
+juv_depth_cat <- read.csv("output_data/bio/01_juvenile_depth_categorical.csv")
+sp_depth_cat <- read.csv("output_data/bio/01_spawning_depth_continous.csv")
 
 ## combine data
 all_depth <- rbind(ad_depth_con, ad_depth_cat)
@@ -154,9 +152,9 @@ axis(4, at=pretty(range(yfit)))
 
 ### juvenile
 
-juv_depth_con <- read.csv("output_data/05a_juvenile_depth_continuous.csv")
-juv_depth_cat <- read.csv("output_data/05a_juvenile_depth_categorical.csv")
-# sp_depth_cat <- read.csv("output_data/05a_spawning_depth_continuous.csv")
+juv_depth_con <- read.csv("output_data/bio/01_juvenile_depth_continous.csv")
+juv_depth_cat <- read.csv("output_data/bio/01_juvenile_depth_categorical.csv")
+# sp_depth_cat <- read.csv("output_data/bio/01_spawning_depth_continuous.csv")
 
 ## combine data
 all_depth <- rbind(juv_depth_con, juv_depth_cat)

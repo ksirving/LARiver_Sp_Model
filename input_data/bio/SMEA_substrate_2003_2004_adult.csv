@@ -1,0 +1,11 @@
+﻿substrate %,M_Blvd,Highway_60,Riverside_Dr,all_sites,july (Highway 60),august (hwy 60 & mission),total
+silt,0,0,0,0,0,0,0
+silt_sand,0,0,0,0,0,0,0
+sand,35.7,40,0,21.2,0,6.4,0
+sand_gravel,35.7,25,54.1,41.2,27.6,87.2,14.5
+gravel,10.7,35,45.9,31.8,0,0,53.9
+sand_cobble,0,0,0,0,0,0,0
+gravel_cobble,0,0,0,0,72.4,6.4,31.6
+cobble,0,0,0,0,0,0,0
+boulder,17.9,0,0,5.9,0,0,0
+abundance,28,20,37,85,29,47,76

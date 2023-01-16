@@ -1,0 +1,16 @@
+abundance	substrate	site	year	s_symbol_h	y_symbol_h
+0.00	0.1905	c	2007	diamond	vertical
+0.00	0.2377	b	2007	square	vertical
+0.00	0.7602	c	2006	diamond	horizontal
+0.97	0.1617	c	2005	diamond	open
+1.01	1.21E-03	b	2005	square	open
+4.66	0.1339	b	2008	square	diagonal
+6.45	0.1158	c	2008	diamond	diagonal
+8.39	0.327	c	2003	diamond	solid
+9.75	0.2872	b	2003	square	solid
+10.06	0.648	b	2006	square	horizontal
+10.49	0.6974	a	2007	circle	vertical
+10.76	0.5683	a	2006	circle	horizontal
+10.99	0.7264	a	2005	circle	open
+14.84	0.5718	b	2004	square	curv_diagonal
+15.03	0.7854	a	2008	circle	diagonal

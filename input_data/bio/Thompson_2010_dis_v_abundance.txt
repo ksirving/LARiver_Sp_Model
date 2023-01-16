@@ -1,0 +1,17 @@
+#DataThief /Users/katieirving/Documents/Projects/LA_River/Bio/figures/Thompson_2010_dis_v_abundance.jpg Friday 3-Jan-2020 10:03:35 PM			
+abundance	discharge	site	year
+-0.0361	0.1029	b	2007
+10.4625	0.3556	a	2007
+11.0077	0.4393	a	2005
+10.1381	0.5649	b	2006
+-0.0331	0.2206	c	2007
+-6.99E-03	0.4796	c	2006
+1.0022	0.5067	c	2005
+0.9843	0.5633	b	2005
+4.6713	0.649	b	2004
+6.4602	0.8287	c	2008
+10.7513	1.0241	a	2006
+9.784	1.1147	b	2003
+8.4693	1.2743	c	2003
+15.0526	0.8609	a	2008
+14.8971	0.8485	b	2004

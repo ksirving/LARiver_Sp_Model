@@ -1,0 +1,3 @@
+#DataThief /Users/katieirving/Documents/Projects/LA_River/Bio/figures/Thompson_2010_sub_v_abundance.jpg Monday 6-Jan-2020 2:18:21 PM	
+14.89	0.57
+15.15	0.79

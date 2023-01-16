@@ -1,0 +1,49 @@
+Location,Section,Date,Start Time,End Time,Observer,Recorder,Species,Count,"Estimated Total
+Length (mm)",Distance of fish above bottom (cm),Velocity at fish (m/s),Total Depth (cm),Vel (0.6) m/s,Vel (0.2) m/s,Vel (0.8) m/s,Dominant Substrate,Distance from cover (m),Cover Type,GCU,Activity,Comments
+RIX to Middle Channel,3,9/22/2017,1320,1445,Jason May,Larry Brown,Santa Ana Sucker,1,100,0,0.41,41,0.63,NA,NA,GV,2.5,WD,RIFFLE,SWIM,
+RIX to Middle Channel,3,9/22/2017,1320,1445,Jason May,Larry Brown,Santa Ana Sucker,3,100,0,0.04,57,0.58,NA,NA,GV,0,WD,RIFFLE,FEED,
+RIX to Middle Channel,3,9/22/2017,1320,1445,Jason May,Larry Brown,Santa Ana Sucker,1,120,0,0.24,62,0.67,NA,NA,GV,0.5,WD,RIFFLE,FEED,
+RIX to Middle Channel,3,9/22/2017,1320,1445,Jason May,Larry Brown,Santa Ana Sucker,2,100,0,0.53,36,0.9,NA,NA,GV,NV,NC,RIFFLE,FEED,
+RIX to Middle Channel,3,9/23/2017,940,1110,Larry Brown,Jason May,Santa Ana Sucker,3,110,0,0.46,44,0.73,NA,NA,GV,0,OV,RUN,FEED,Tamarisk bushon right bank; Lots of red algae in this section up to RIX input.
+RIX to Middle Channel,3,9/23/2017,940,1110,Larry Brown,Jason May,Santa Ana Sucker,2,110,0,0.41,54,0.63,NA,NA,GV,0,OV,RUN,FEED,Cottonwood tree 1 meter off water; Lots of red algae in this section up to RIX input.
+RIX to Middle Channel,3,9/23/2017,940,1110,Larry Brown,Jason May,Santa Ana Sucker,2,100,0,0.07,44,0.25,NA,NA,GV,0.3,BO,RUN,FEED,Fish in VOID behind; Lots of red algae in this section up to RIX input.
+RIX to Middle Channel,3,9/23/2017,940,1110,Larry Brown,Jason May,Santa Ana Sucker,1,120,0,0.1,98,NA,0.54,1.02,CO,0.5,OV,RUN,HOLD,Middle channel; Lots of red algae in this section up to RIX input.
+RIX to Middle Channel,3,9/23/2017,940,1110,Larry Brown,Jason May,Santa Ana Sucker,1,120,0,0.35,36,0.8,NA,NA,CO,5,OV,RIFFLE,FEED,Middle channel; Lots of red algae in this section up to RIX input.
+RIX to Middle Channel,3,9/23/2017,940,1110,Larry Brown,Jason May,Santa Ana Sucker,1,130,0,0.35,36,0.8,NA,NA,CO,5,OV,RIFFLE,FEED,Lots of red algae in this section up to RIX input.
+RIX to Middle Channel,3,9/23/2017,940,1110,Larry Brown,Jason May,Santa Ana Sucker,1,110,0,0.54,56,0.97,NA,NA,CO,1,OV,RUN,FEED,Lots of red algae in this section up to RIX input.
+RIX to Middle Channel,3,9/23/2017,940,1110,Larry Brown,Jason May,Santa Ana Sucker,1,150,0,0.64,84,NA,0.55,0.61,GV,0.7,OV,RUN,FEED,Lots of red algae in this section up to RIX input.
+RIX to Middle Channel,3,9/23/2017,940,1110,Larry Brown,Jason May,Santa Ana Sucker,1,150,0,-0.01,86,NA,0.14,0.96,GV,0,WD,RUN,FEED,Lots of red algae in this section up to RIX input.
+Middle Channel to Riverside Drive,4,9/23/2017,1130,1242,Jason May,Larry Brown,Santa Ana Sucker,1,100,0,0.64,52,0.89,NA,NA,GV,3,OV,RUN,FEED,
+Middle Channel to Riverside Drive,4,9/23/2017,1130,1242,Jason May,Larry Brown,Santa Ana Sucker,2,110,0,0.57,38,1.16,NA,NA,GV,0,OV/WD,RUN,FEED,
+Middle Channel to Riverside Drive,4,9/23/2017,1130,1242,Jason May,Larry Brown,Santa Ana Sucker,1,110,0,0.41,62,0.71,NA,NA,GV,0,AR,RUN,FEED,
+Middle Channel to Riverside Drive,4,9/23/2017,1130,1242,Jason May,Larry Brown,Santa Ana Sucker,1,130,0,0.1,55,0.34,NA,NA,GV,0,WD,RUN,FEED,
+Middle Channel to Riverside Drive,4,9/23/2017,1130,1242,Jason May,Larry Brown,Santa Ana Sucker,2,120,0,0.05,106,NA,0.8,0.45,GV,0,OV,RUN,FEED,
+Middle Channel to Riverside Drive,4,9/23/2017,1130,1242,Jason May,Larry Brown,Santa Ana Sucker,2,120,0,0.05,106,NA,0.8,0.45,GV,0,OV,RUN,FEED,
+Middle Channel to Riverside Drive,4,9/23/2017,1130,1242,Jason May,Larry Brown,Santa Ana Sucker,1,100,0,0.51,40,0.84,NA,NA,GV,3,OV,RUN,FEED,
+Middle Channel to Riverside Drive,4,9/23/2017,1130,1242,Jason May,Larry Brown,Santa Ana Sucker,1,110,0,0.48,57,0.9,NA,NA,GV,0,OV,RUN,FEED,
+Middle Channel to Riverside Drive,4,9/23/2017,1130,1242,Jason May,Larry Brown,Santa Ana Sucker,1,140,0,0.43,34,1.08,NA,NA,GV,2.5,OV,RUN,FEED,
+Middle Channel to Riverside Drive,4,9/23/2017,1310,1350,Larry Brown,Jason May,Santa Ana Sucker,1,130,0,0.88,48,1.15,NA,NA,GV,0.7,OV,RUN,FEED,
+Middle Channel to Riverside Drive,4,9/23/2017,1310,1350,Larry Brown,Jason May,Santa Ana Sucker,1,100,0,0.32,48,0.57,NA,NA,GV,2,OV,RUN,FEED,
+Middle Channel to Riverside Drive,4,9/23/2017,1310,1350,Larry Brown,Jason May,Santa Ana Sucker,1,120,0,0.12,44,0.67,NA,NA,GV,3,UB,RUN,FEED,Undercut Bank
+Middle Channel to Riverside Drive,4,9/23/2017,1310,1350,Larry Brown,Jason May,Santa Ana Sucker,1,100,0,0.32,56,0.87,NA,NA,GV,1.5,UB,RUN,FEED,
+Middle Channel to Riverside Drive,4,9/24/2017,925,1020,Larry Brown,Jason May,Santa Ana Sucker,1,100,0,0.52,40,0.7,NA,NA,GV,0,OV,RUN,FEED,Tamarisk Bush
+Middle Channel to Riverside Drive,4,9/24/2017,925,1020,Larry Brown,Jason May,Santa Ana Sucker,1,100,0,0.21,80,NA,0.46,0.8,GV,2,BO,POOL,FEED,
+Middle Channel to Riverside Drive,4,9/24/2017,925,1020,Larry Brown,Jason May,Santa Ana Sucker,1,120,0,0.34,54,0.66,NA,NA,CO,0,OV,RUN,NV,
+Middle Channel to Riverside Drive,4,9/24/2017,925,1020,Larry Brown,Jason May,Santa Ana Sucker,1,100,0,0.3,38,0.85,NA,NA,GV,5,OV,RUN,NV,Middle Channel
+Middle Channel to Riverside Drive,4,9/24/2017,925,1020,Larry Brown,Jason May,Santa Ana Sucker,1,110,0,0.3,38,0.85,NA,NA,GV,5,OV,RUN,NV,Middle Channel
+Middle Channel to Riverside Drive,4,9/24/2017,1100,1220,Jason May,Larry Brown,Santa Ana Sucker,1,120,0,0.52,72,0.9,NA,NA,GV,1,OV,RUN,FEED,
+Middle Channel to Riverside Drive,4,9/24/2017,1100,1220,Jason May,Larry Brown,Santa Ana Sucker,2,100,0,0.34,80,NA,1.14,0.49,GV,1,OV,RUN,FEED,
+Middle Channel to Riverside Drive,4,9/24/2017,1100,1220,Jason May,Larry Brown,Santa Ana Sucker,1,110,0,0.42,84,NA,0.93,0.42,GV,0,WD,RUN,REST,
+Middle Channel to Riverside Drive,4,9/24/2017,1100,1220,Jason May,Larry Brown,Santa Ana Sucker,1,130,0,0.39,34,0.43,NA,NA,GV,0,UB,RUN,HOLD,
+Middle Channel to Riverside Drive,4,9/24/2017,1100,1220,Jason May,Larry Brown,Santa Ana Sucker,1,100,0,0.44,53,1.16,NA,NA,GV,0,OV,RUN,FEED,
+Middle Channel to Riverside Drive,4,9/24/2017,1100,1220,Jason May,Larry Brown,Santa Ana Sucker,3,110,0,0.16,70,1.04,NA,NA,GV,0,OV,RUN,FEED,
+Middle Channel to Riverside Drive,4,9/24/2017,1100,1220,Jason May,Larry Brown,Santa Ana Sucker,2,100,0,0.6,42,0.83,NA,NA,GV,2.5,UB,RUN,FEED,
+Middle Channel to Riverside Drive,4,9/24/2017,1100,1220,Jason May,Larry Brown,Santa Ana Sucker,1,100,0,0.42,45,1.12,NA,NA,CO,2,OV,RUN,FEED,
+Middle Channel to Riverside Drive,4,9/24/2017,1100,1220,Jason May,Larry Brown,Santa Ana Sucker,2,110,0,0.73,40,1.08,NA,NA,GV,0,OV,RUN,FEED,
+Middle Channel to Riverside Drive,4,9/24/2017,1100,1220,Jason May,Larry Brown,Santa Ana Sucker,3,110,0,0.41,45,0.88,NA,NA,GV,1,UB,RIFFLE,FEED,
+Middle Channel to Riverside Drive,4,9/24/2017,1100,1220,Jason May,Larry Brown,Santa Ana Sucker,1,130,0,0.41,45,0.88,NA,NA,GV,1,UB,RIFFLE,FEED,
+Middle Channel to Riverside Drive,4,9/24/2017,1250,1338,Larry Brown,Jason May,Santa Ana Sucker,1,110,0,0.51,48,0.96,NA,NA,GV,1,UB,RUN,FEED,
+Middle Channel to Riverside Drive,4,9/24/2017,1250,1338,Larry Brown,Jason May,Santa Ana Sucker,1,150,0,0.52,38,1.08,NA,NA,GV,2,OV,RUN,FEED,Middle Channel
+Middle Channel to Riverside Drive,4,9/24/2017,1250,1338,Larry Brown,Jason May,Santa Ana Sucker,1,110,0,0.52,38,1.08,NA,NA,GV,2,OV,RUN,FEED,Middle Channel
+Middle Channel to Riverside Drive,4,9/24/2017,1250,1338,Larry Brown,Jason May,Santa Ana Sucker,1,100,0,0.25,36,0.94,NA,NA,GV,4,OV,RUN,HOLD,Middle Channel
+Middle Channel to Riverside Drive,4,9/24/2017,1250,1338,Larry Brown,Jason May,Santa Ana Sucker,4,100,0,0.38,48,0.89,NA,NA,GV,3,OV,RUN,FEED,

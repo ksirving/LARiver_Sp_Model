@@ -1,0 +1,11 @@
+"","substrate..","M_Blvd","Highway_60","Riverside_Dr","all_sites","M_Blvd_ab","Highway_60_ab","Riverside_Dr_ab","all_sites_ab"
+"1","silt",0,0,0,0,0,0,0,0
+"2","silt_sand",0,0,0,0,0,0,0,0
+"3","sand",35.7,40,0,21.2,10,8,0,18
+"4","sand_gravel",35.7,25,54.1,41.2,10,5,20,35
+"5","gravel",10.7,35,45.9,31.8,3,7,17,27
+"6","sand_cobble",0,0,0,0,0,0,0,0
+"7","gravel_cobble",0,0,0,0,0,0,0,0
+"8","cobble",0,0,0,0,0,0,0,0
+"9","boulder",17.9,0,0,5.9,5,0,0,5
+"10","abundance",28,20,37,85,8,4,14,72

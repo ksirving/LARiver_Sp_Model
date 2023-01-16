@@ -1,0 +1,17 @@
+#DataThief /Users/katieirving/Documents/Projects/LA_River/Bio/figures/Thompson_2010_sub_v_abundance.jpg Friday 3-Jan-2020 9:52:51 PM			
+abundance	% cor sub	site	year
+0.9914	-1.21E-03	c	2005
+6.4434	0.1158	c	2008
+4.6561	0.1327	b	2008
+1.0033	0.1617	b	2005
+-5.63E-03	0.1894	c	2007
+-2.20E-03	0.2365	b	2007
+9.8385	0.2848	b	2003
+8.4805	0.3246	c	2003
+10.7923	0.5671	a	2006
+10.215	0.6492	b	2006
+10.5683	0.6949	c	2007
+11.037	0.724	c	2005
+-2.99E-03	0.759	c	2006
+14.892	0.5733	b	2004
+15.1453	0.786	a	2008
