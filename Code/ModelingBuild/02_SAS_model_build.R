@@ -16,14 +16,11 @@ library(gridExtra) # tile several plots next to each other
 library(scales)
 library(data.table)
 
-
-## upload data
-
-setwd("/Users/katieirving/Documents/git/flow_eco_mech")
+getwd()
 
 ## depth
-ad_depth_con <- read.csv("output_data/01_adult_depth_continuous_updated.csv") ## all wulff incl and thompson removed - remove SAWA?
-ad_depth_cat <- read.csv("output_data/01_adult_depth_categorical.csv")
+ad_depth_con <- read.csv("output_data/bio/01_adult_depth_continuous_updated.csv") ## all wulff incl and thompson removed - remove SAWA?
+ad_depth_cat <- read.csv("output_data/bio/01_adult_depth_categorical.csv")
 
 # ad_depth_red <- subset(ad_depth_con, !Dataset=="Thompson")
 all_depth <- rbind(ad_depth_con, ad_depth_cat)
@@ -94,6 +91,7 @@ lines(xfit, yfit, col="blue", lwd=2)
 
 
 ## probability curve - histogram scaled and centered depth, then transformed back to raw depth
+png("figures/bio/02_SAS_Adult_velocity_Prob_curve.png", width = 700, height = 700)
 
 depth_freq$Scaled_Depth <-scale(depth_freq$Depth, scale=T, center=T)
 scaled_x <- depth_freq$Scaled_Depth
@@ -112,6 +110,8 @@ plot(xfit, yfit, axes=FALSE, xlab='Depth (cm)', ylab='Probability', type='l', co
 par(new=TRUE)
 axis(2, at=pretty(range(yfit)))
 
+dev.off()
+
 ## data frame with probabilities and depth - to combine with hydraulic data
 
 fitdata <- data.frame(matrix(ncol=2, nrow=length(yfit)))
@@ -120,14 +120,14 @@ fitdata[,2] <- yfit
 colnames(fitdata) <- c("depth_fit", "prob_fit")
 head(fitdata)
 
-write.csv(fitdata, "output_data/02_adult_depth_prob_curve_data.csv")
+write.csv(fitdata, "output_data/Models/02_adult_depth_prob_curve_data.csv")
 
 
 # Velocity ----------------------------------------------------------------
 
 
 ## adult
-ad_vel_con <- read.csv("output_data/01_adult_velocity_continuous_updated.csv")
+ad_vel_con <- read.csv("output_data/bio/01_adult_velocity_continuous_updated.csv")
 # dim(ad_vel_con) ## 343
 # unique(ad_vel_con$Dataset) ## 2 datasets
 
@@ -173,10 +173,10 @@ legend(locator(1), levels(data.f), fill=colfill)
 ## need to predict outside of the velocity range from the curve. 
 
 # check data
-unique(vel_freq$Dataset)
-mean(vel_freq$Velocity) ## 0.6121954
-dim(vel_freq) ## 1167
-range(vel_freq$Velocity)
+# unique(vel_freq$Dataset)
+# mean(vel_freq$Velocity) ## 0.6121954
+# dim(vel_freq) ## 1167
+# range(vel_freq$Velocity)
 
 ## probability curve
 vel_freq$Scaled_Vel <-scale(vel_freq$Velocity, scale=T, center=T)
@@ -189,7 +189,7 @@ yfit<-dnorm(xfit,mean=mean(scaled_x),sd=sd(scaled_x))
 xfit_r <- seq(min(vel_freq$Velocity), max(vel_freq$Velocity), length=1000)
 
 ## plot curve with raw depth axis
-png("figures/Final_curves/Velocity/02_SAS_Adult_velocity_Prob_curve.png", width = 700, height = 700)
+png("figures/bio/02_SAS_Adult_velocity_Prob_curve.png", width = 700, height = 700)
 
 plot(xfit_r, yfit, axes=FALSE, xlab='', ylab='', type='l', col='', main = "" )
 axis(1, at=pretty(xfit_r), cex.axis=2)
@@ -211,5 +211,5 @@ fitdata[,1] <- xfit_r
 fitdata[,2] <- yfit
 colnames(fitdata) <- c("velocity_fit", "prob_fit")
 
-write.csv(fitdata, "output_data/02_adult_velocity_prob_curve_data.csv")
+write.csv(fitdata, "output_data/Models/02_adult_velocity_prob_curve_data.csv")
 
