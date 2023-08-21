@@ -19,6 +19,7 @@ library(zoo)
 library(scales)
 getwd()
 setwd("/Users/katieirving/Documents/git/flow_eco_mech")
+
 ## function to find roots
 load(file="root_interpolation_function.Rdata")
 
