@@ -12,33 +12,37 @@ library(data.table)
 library(zoo)
 library(scales)
 
-setwd("/Users/katieirving/Documents/git/flow_eco_mech")
 ## upload hydraulic data
-setwd("input_data/HecRas/scenarios")
+setwd("/Users/katieirving/Library/CloudStorage/OneDrive-SCCWRP/Documents - Katie’s MacBook Pro/git/LARiver_Sp_Model/ignore/scenarios")
+
+## directory for scenarios
+indir <- "ignore/scenarios/"
 
 h <- list.files(pattern="_predictions")
-length(h) ## 
-h <- h[-c(9,13)] ## remove LA1/ LA2
+length(h) ## 14
+h <- h[-c(9,13)] ## remove la1, la2, tidal
 h
+
 ## set wd back to main
-setwd("/Users/katieirving/Documents/git/flow_eco_mech")
+setwd("/Users/katieirving/Library/CloudStorage/OneDrive-SCCWRP/Documents - Katie’s MacBook Pro/git/LARiver_Sp_Model/")
 
 ## upload and format Q limits and calculation
-L <- list.files(path = "output_data", pattern="_limits_updated_hyd")
+L <- list.files(path = "ignore/Probs", pattern="_limits_updated_hyd")
 L
 
-C <- list.files(path = "output_data", pattern="_calculation_updated_hyd")
+C <- list.files(path = "ignore/Probs", pattern="_calculation_updated_hyd")
 C
-length(L) 
+
 # Q_Calc <- read.csv(paste("output_data/F1_", NodeName, "_SAS_juvenile_depth_Q_calculation_updated_hyd.csv", sep=""))
 n = 12
 n
 for(n in 1: length(h)) {
   
-  NodeData <- read.csv(file=paste("input_data/HecRas/scenarios/", h[n], sep=""))
+  NodeData <- read.csv(file=paste0(indir, h[n]))
   # BaseData <- read.csv("input_data/HecRas/hydraulic_ts_F34D.csv") ## for dates
   NodeName <- str_split(h[n], "_", 3)[[1]]
   NodeName <- NodeName[1]
+  head(NodeData)
   
   QL <- Filter(function(x) grepl(paste(NodeName), x), L)
 
@@ -119,7 +123,7 @@ QC
   for(c in 1: length(QC)) {
     
     ## upload and format Q limits and calculation
-    Q_Calc <- read.csv(file=paste("output_data/", QC[c], sep=""))
+    Q_Calc <- read.csv(file=paste("ignore/Probs/", QC[c], sep=""))
     Q_Calc
     QName <- str_split(QC[c], "_", 6)[[1]]
     # QName
@@ -162,7 +166,7 @@ QC
       lim <- lim[4]
     }
     
-    limits <- read.csv(file=paste("output_data/", lim, sep=""))
+    limits <- read.csv(file=paste("ignore/Probs/", lim, sep=""))
     # limits
  
     
@@ -202,7 +206,7 @@ QC
     scen_data <- all_data %>% 
       filter(Scenario  == scenarios[s]) %>%
       pivot_wider(names_from = variable, values_from = value)
-    head(scen_data)
+
     ## define position
     positions <- scen_data %>% 
       select(starts_with(HydraulicName))
@@ -536,9 +540,9 @@ QC
   ## in species hydraulic loop
   
   ## save df
-  write.csv(melt_timex, paste("output_data/scenarios/X1", NodeName, SpeciesName, LifeStageName, HydraulicName,  "time_stats_updated_hyd_scenarios.csv", sep="_"))
+  write.csv(melt_timex, paste("ignore/ScenarioProbs/X1", NodeName, SpeciesName, LifeStageName, HydraulicName,  "time_stats_updated_hyd_scenarios.csv", sep="_"))
   
-  write.csv(melt_days, paste("output_data/scenarios/X1", NodeName, SpeciesName, LifeStageName, HydraulicName,  "total_days_long_updated_hyd_scenarios.csv", sep="_") )
+  write.csv(melt_days, paste("ignore/ScenarioProbs/X1", NodeName, SpeciesName, LifeStageName, HydraulicName,  "total_days_long_updated_hyd_scenarios.csv", sep="_") )
   
   } ## end species hydraulic loop
   

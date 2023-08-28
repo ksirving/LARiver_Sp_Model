@@ -11,19 +11,18 @@ library(scales)
 library(data.table)
 
 ## upload hydraulic data
-setwd("input_data/HecRas")
+setwd("ignore/HecRas")
 
 h <- list.files(pattern="predictions")
 length(h) ## 18
-h
-n=1
+
 ## set wd back to main
-setwd("/Users/katieirving/Documents/git/flow_eco_mech")
+setwd("/Users/katieirving/Library/CloudStorage/OneDrive-SCCWRP/Documents - Katie’s MacBook Pro/git/LARiver_Sp_Model/")
 
 for(n in 1: length(h)) {
   
-  NodeData <- read.csv(file=paste("input_data/HecRas/", h[n], sep=""))
-  F34D <- read.csv("input_data/HecRas/hydraulic_ts_F34D.csv") ## for dates
+  NodeData <- read.csv(file=paste("ignore/HecRas/", h[n], sep=""))
+  F34D <- read.csv("ignore/HecRas/hydraulic_ts_F34D.csv") ## for dates
   
   NodeName <- str_split(h[n], "_", 3)[[1]]
   NodeName <- NodeName[1]
@@ -108,7 +107,7 @@ for(n in 1: length(h)) {
   
   
   ## save out
-  save(all_data, file=paste("output_data/C1_", NodeName, "_Cladophora_Shear_Stress_Adult_discharge_probs_2010_2017_TS_updated_hyd.RData", sep=""))
+  save(all_data, file=paste("ignore/Probs/C1_", NodeName, "_Cladophora_Shear_Stress_Adult_discharge_probs_2010_2017_TS_updated_hyd.RData", sep=""))
   
   # format probability time series ------------------------------------------
   
@@ -124,10 +123,15 @@ for(n in 1: length(h)) {
   H_limits <- as.data.frame(matrix(ncol=length(positions), nrow=2)) 
   H_limits$Type<-c("Hydraulic_limit1", "Hydraulic_limit2")
   
+  
+  ## calculation
+  Q_Calc <- as.data.frame(matrix(ncol=1, nrow=3 ))
+  names(Q_Calc) <- "Thresh"
+  
   time_statsx <- NULL
   days_data <- NULL
   
-p=1
+
   # probability as a function of discharge -----------------------------------
   
   for(p in 1:length(positions)) {
@@ -194,7 +198,7 @@ p=1
   limits <- limits %>%
     mutate(Species ="Cladophora", Life_Stage = "Adult", Hydraulic = "Shear Stress", Node = NodeName)
 
-  write.csv(limits, paste("output_data/F4_",NodeName,"_Cladophora_Adult_Shear_Stress_Q_limits_updated_hyd.csv", sep=""))
+  write.csv(limits, paste("ignore/Probs/C1_",NodeName,"_Cladophora_Adult_Shear_Stress_Q_limits_updated_hyd.csv", sep=""))
   
 
   
@@ -204,7 +208,7 @@ p=1
     rename( Season = variable) %>%
     mutate(Species ="Cladophora", Life_Stage = "Adult", Hydraulic = "Shear Stress", Node = NodeName)
   
-  write.csv(melt_time, paste("output_data/C1_", NodeName, "_Cladophora_Adult_Shear_Stress_time_stats_updated_hyd.csv", sep=""))
+  write.csv(melt_time, paste("ignore/Probs/C1_", NodeName, "_Cladophora_Adult_Shear_Stress_time_stats_updated_hyd.csv", sep=""))
   
   ### days per month
   days_data <- select(days_data,c(Q, month, water_year, month_year, year, day, ID, threshold, position, season, node))
@@ -250,7 +254,7 @@ p=1
   
   
   ## save df
-  write.csv(melt_days, paste("output_data/C1_", NodeName, "_Cladophora_Adult_Shear Stress_total_days_long_updated_hyd.csv", sep="") )
+  write.csv(melt_days, paste("ignore/Probs/C1_", NodeName, "_Cladophora_Adult_Shear Stress_total_days_long_updated_hyd.csv", sep="") )
   
 } ## end 1st loop
 

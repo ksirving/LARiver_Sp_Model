@@ -18,34 +18,35 @@ library(data.table)
 library(zoo)
 library(scales)
 getwd()
-setwd("/Users/katieirving/Documents/git/flow_eco_mech")
 
 ## function to find roots
-load(file="root_interpolation_function.Rdata")
+load(file="output_data/functions/root_interpolation_function.Rdata")
 
 ## define root equation
-load(file="expression_Q_limit_function.RData")
+load(file="output_data/functions/expression_Q_limit_function.RData")
 
 # Combine with hydraulic data -------------------------------------------
 
 ## upload habitat curve data
-fitdata <- read.csv("output_data/old_data/adult_depth_prob_curve_data.csv")
+fitdata <- read.csv("output_data/Models/02_adult_depth_prob_curve_data.csv")
 # fitdata <- read.csv("output_data/old_data/juvenile_depth_prob_curve_data.csv")
 head(fitdata)
-## upload hydraulic data
-setwd("input_data/HecRas")
 
-h <- list.files(pattern="_predictions")
-length(h) ## 20
+## upload hydraulic data
+setwd("ignore/HecRas")
+
+h <- list.files(pattern="predictions")
+length(h) ## 18
 h
-n=8
+n=17
 ## set wd back to main
-setwd("/Users/katieirving/Documents/git/flow_eco_mech")
+setwd("/Users/katieirving/Library/CloudStorage/OneDrive-SCCWRP/Documents - Katie’s MacBook Pro/git/LARiver_Sp_Model/")
+
 
 for(n in 1: length(h)) {
   
-NodeData <- read.csv(file=paste("input_data/HecRas/", h[n], sep=""))
-F34D <- read.csv("input_data/HecRas/hydraulic_ts_F34D.csv") ## for dates
+NodeData <- read.csv(file=paste("ignore/HecRas/", h[n], sep=""))
+F34D <- read.csv("ignore/HecRas/hydraulic_ts_F34D.csv") ## for dates
 NodeName <- str_split(h[n], "_", 3)[[1]]
 NodeName <- NodeName[1]
 ## format hydraulic data
@@ -97,6 +98,7 @@ if(length(hydraul) == 8) {
 
 ## take only depth variable
 hyd_dep <- hyd_dep %>% select(DateTime, node, Q, contains("depth"), date_num)
+hyd_dep
 
 # ## melt channel position data
 hyd_dep<-reshape2::melt(hyd_dep, id=c("DateTime","Q", "node", "date_num"))
@@ -115,7 +117,7 @@ all_data <- hyd_dep %>%
 head(all_data)
 range(all_data$prob_fit)
 ## save out
-save(all_data, file=paste("output_data/F1_", NodeName, "_SAS_adult_depth_discharge_probability_updated_hyd.RData", sep=""))
+save(all_data, file=paste("ignore/Probs/F1_", NodeName, "_SAS_adult_depth_discharge_probability_updated_hyd.RData", sep=""))
 
 
 # format probability time series ------------------------------------------
@@ -136,7 +138,7 @@ all_data <- all_data %>%
   mutate(hour = hour(DateTime)) %>%
   mutate(water_year = ifelse(month == 10 | month == 11 | month == 12, year, year-1))
 
-save(all_data, file=paste("output_data/F1_", NodeName, "_SAS_depth_adult_discharge_probs_2010_2017_TS_updated_hyd.RData", sep=""))
+save(all_data, file=paste("ignore/Probs/F1_", NodeName, "_SAS_depth_adult_discharge_probs_2010_2017_TS_updated_hyd.RData", sep=""))
 
 ### define dataframes for 2nd loop
 
@@ -326,14 +328,14 @@ Q_Calc$Position <- positions
 Q_Calc <- Q_Calc %>%
   mutate(Species ="SAS", Life_Stage = "Adult", Hydraulic = "Depth", Node = NodeName)
 
-write.csv(Q_Calc, paste("output_data/F1_",NodeName,"_SAS_adult_depth_Q_calculation_updated_hyd.csv", sep=""))
+write.csv(Q_Calc, paste("ignore/Probs/F1_",NodeName,"_SAS_adult_depth_Q_calculation_updated_hyd.csv", sep=""))
 
 limits <- rbind(limits, H_limits)
 
 limits <- limits %>%
   mutate(Species ="SAS", Life_Stage = "Adult", Hydraulic = "Depth", Node = NodeName)
 
-write.csv(limits, paste("output_data/F1_",NodeName,"_SAS_adult_depth_Q_limits_updated_hyd.csv", sep=""))
+write.csv(limits, paste("ignore/Probs/F1_",NodeName,"_SAS_adult_depth_Q_limits_updated_hyd.csv", sep=""))
 
 all_data[which(all_data$prob_fit <  0.1),"prob_fit"] <- 0.1
 
@@ -344,7 +346,7 @@ melt_time <- melt_time %>%
   rename( Probability_Threshold = variable) %>%
   mutate(Species ="SAS", Life_Stage = "Adult", Hydraulic = "Depth", Node = NodeName)
 
-write.csv(melt_time, paste("output_data/F1_", NodeName, "_SAS_adult_depth_time_stats_updated_hyd.csv", sep=""))
+write.csv(melt_time, paste("ignore/Probs/F1_", NodeName, "_SAS_adult_depth_time_stats_updated_hyd.csv", sep=""))
 
 ### days per month
 days_data <- select(days_data, c(Q, month, water_year, day, ID01, Low, ID02, Medium, ID03, High, position, DateTime, node) )# all probs
@@ -421,7 +423,7 @@ melt_days <- melt_days %>%
 
 
 ## save df
-write.csv(melt_days, paste("output_data/F1_", NodeName, "_SAS_adult_depth_total_days_long_updated_hyd.csv", sep="") )
+write.csv(melt_days, paste("ignore/Probs/F1_", NodeName, "_SAS_adult_depth_total_days_long_updated_hyd.csv", sep="") )
 
 } ## end 1st loop
 
@@ -432,22 +434,22 @@ write.csv(melt_days, paste("output_data/F1_", NodeName, "_SAS_adult_depth_total_
 
 
 ## upload habitat curve data
-fitdata <- read.csv("output_data/old_data/adult_velocity_prob_curve_data.csv")
+fitdata <- read.csv("output_data/Models/02_adult_velocity_prob_curve_data.csv")
 
 ## upload hydraulic data
-setwd("input_data/HecRas")
+setwd("ignore/HecRas")
 
 h <- list.files(pattern="predictions")
 length(h) ## 18
 
 ## set wd back to main
-setwd("/Users/katieirving/Documents/git/flow_eco_mech")
-# n=1
+setwd("/Users/katieirving/Library/CloudStorage/OneDrive-SCCWRP/Documents - Katie’s MacBook Pro/git/LARiver_Sp_Model/")
+
 
 for(n in 1: length(h)) {
   
-  NodeData <- read.csv(file=paste("input_data/HecRas/", h[n], sep=""))
-  F34D <- read.csv("input_data/HecRas/hydraulic_ts_F34D.csv") ## for dates
+  NodeData <- read.csv(file=paste("ignore/HecRas/", h[n], sep=""))
+  F34D <- read.csv("ignore/HecRas/hydraulic_ts_F34D.csv") ## for dates
   NodeName <- str_split(h[n], "_", 3)[[1]]
   NodeName <- NodeName[1]
   ## format hydraulic data
@@ -495,16 +497,16 @@ for(n in 1: length(h)) {
     
   }
 
-# take only depth variable for min limit
-hyd_dep <- hyd_vel %>% select(DateTime, node, Q, contains("depth"), date_num)
-
-
+  
 ## take only vel variable
-hyd_vel <- hyd_vel %>% select(DateTime, node, Q, contains( "vel"), date_num)
+hyd_vel <- hyd_dep %>% select(DateTime, node, Q, contains( "vel"), date_num)
+
+# take only depth variable for min limit
+hyd_dep <- hyd_dep %>% select(DateTime, node, Q, contains("depth"), date_num)
 
 # ## melt channel position data
 hyd_vel<-reshape2::melt(hyd_vel, id=c("DateTime","Q", "node", "date_num"))
-
+hyd_vel
 
   ## use smooth spline to predict on new data set
   new_values <-smooth.spline(fitdata$velocity_fit, fitdata$prob_fit)
@@ -516,7 +518,7 @@ hyd_vel<-reshape2::melt(hyd_vel, id=c("DateTime","Q", "node", "date_num"))
 
   
   ## save out
-  save(all_data, file=paste("output_data/F1_", NodeName, "_SAS_adult_velocity_discharge_probability_updated_hyd.RData", sep=""))
+  save(all_data, file=paste("ignore/Probs/F1_", NodeName, "_SAS_adult_velocity_discharge_probability_updated_hyd.RData", sep=""))
   
   
   # format probability time series ------------------------------------------
@@ -537,7 +539,7 @@ hyd_vel<-reshape2::melt(hyd_vel, id=c("DateTime","Q", "node", "date_num"))
     mutate(hour = hour(DateTime)) %>%
     mutate(water_year = ifelse(month == 10 | month == 11 | month == 12, year, year-1))
   
-  save(all_data, file=paste("output_data/F1_", NodeName, "_SAS_velocity_adult_discharge_probs_2010_2017_TS_updated_hyd.RData", sep=""))
+  save(all_data, file=paste("ignore/Probs/F1_", NodeName, "_SAS_velocity_adult_discharge_probs_2010_2017_TS_updated_hyd.RData", sep=""))
   
   ### define dataframes for 2nd loop
   
@@ -740,14 +742,14 @@ hyd_vel<-reshape2::melt(hyd_vel, id=c("DateTime","Q", "node", "date_num"))
   Q_Calc <- Q_Calc %>%
     mutate(Species ="SAS", Life_Stage = "Adult", Hydraulic = "Depth", Node = NodeName)
   
-  write.csv(Q_Calc, paste("output_data/F1_",NodeName,"_SAS_adult_velocity_Q_calculation_updated_hyd.csv", sep=""))
+  write.csv(Q_Calc, paste("ignore/Probs/F1_",NodeName,"_SAS_adult_velocity_Q_calculation_updated_hyd.csv", sep=""))
   
   ## limits
   limits <- rbind(limits, H_limits)
 
   limits <- limits %>%
     mutate(Species ="SAS", Life_Stage = "Adult", Hydraulic = "Velocity", Node = NodeName)
-  write.csv(limits, paste("output_data/F1_",NodeName,"_SAS_adult_velocity_Q_limits_updated_hyd.csv", sep=""))
+  write.csv(limits, paste("ignore/Probs/F1_",NodeName,"_SAS_adult_velocity_Q_limits_updated_hyd.csv", sep=""))
 
   ## plot thresholds
   # file_name = paste("figures/Application_curves/Velocity/", NodeName, "_adult_depth_prob_Q_thresholds_updated_hyd.png", sep ="")
@@ -814,7 +816,7 @@ hyd_vel<-reshape2::melt(hyd_vel, id=c("DateTime","Q", "node", "date_num"))
     rename( Probability_Threshold = variable) %>%
     mutate(Species ="SAS", Life_Stage = "Adult", Hydraulic = "Velocity", Node = NodeName)
   
-  write.csv(melt_time, paste("output_data/F1_", NodeName, "_SAS_adult_velocity_time_stats_updated_hyd.csv", sep=""))
+  write.csv(melt_time, paste("ignore/Probs/F1_", NodeName, "_SAS_adult_velocity_time_stats_updated_hyd.csv", sep=""))
   
   ### days per month
   days_data <- select(days_data, c(Q, month, water_year, day, ID01, Low, ID02, Medium, ID03, High, position, DateTime, node) )# all probs
@@ -891,7 +893,7 @@ hyd_vel<-reshape2::melt(hyd_vel, id=c("DateTime","Q", "node", "date_num"))
   
   
   ## save df
-  write.csv(melt_days, paste("output_data/F1_", NodeName, "_SAS_adult_velocity_total_days_long_updated_hyd.csv", sep="") )
+  write.csv(melt_days, paste("ignore/Probs/F1_", NodeName, "_SAS_adult_velocity_total_days_long_updated_hyd.csv", sep="") )
   
 } ## end 1st loop
 
