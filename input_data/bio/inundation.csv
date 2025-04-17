@@ -1,0 +1,16 @@
+species,life stage,substrate,mortality_prec,depth_cm,duration_days,source
+Salix gooddingii,seedling,gravel sand,80,35,105,"Tallent-Halsell, N. G., & Walker, L. R. (2002). RESPONSES OF SALIX GOODDINGII AND TAMARIX RAMOSISSIMA TO FLOODING. Wetlands, 22(4), 776–785."
+Salix gooddingii,seedling,sand,80,35,105,"Tallent-Halsell, N. G., & Walker, L. R. (2002). RESPONSES OF SALIX GOODDINGII AND TAMARIX RAMOSISSIMA TO FLOODING. Wetlands, 22(4), 776–785."
+Salix gooddingii,seedling,gravel sand,20,0,105,"Tallent-Halsell, N. G., & Walker, L. R. (2002). RESPONSES OF SALIX GOODDINGII AND TAMARIX RAMOSISSIMA TO FLOODING. Wetlands, 22(4), 776–785."
+Salix gooddingii,seedling,sand,15,0,105,"Tallent-Halsell, N. G., & Walker, L. R. (2002). RESPONSES OF SALIX GOODDINGII AND TAMARIX RAMOSISSIMA TO FLOODING. Wetlands, 22(4), 776–785."
+Salix gooddingii,seedling,gravel sand,62,-20,105,"Tallent-Halsell, N. G., & Walker, L. R. (2002). RESPONSES OF SALIX GOODDINGII AND TAMARIX RAMOSISSIMA TO FLOODING. Wetlands, 22(4), 776–785."
+Salix gooddingii,seedling,sand,45,-20,105,"Tallent-Halsell, N. G., & Walker, L. R. (2002). RESPONSES OF SALIX GOODDINGII AND TAMARIX RAMOSISSIMA TO FLOODING. Wetlands, 22(4), 776–785."
+Salix gooddingii,seedling,,0,5,58,"Vandersande, M. W., Glenn, E. P., & Walworth, J. L. (2001). Tolerance of five riparian plants from the lower Colorado River to salinity drought and inundation. Journal of Arid Environments, 49(1), 147–159. https://doi.org/10.1006/jare.2001.0839 table 4"
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+tallent-halsell etc al depth refers to water from the root crown. So 35 would be 35cm of water above the root crown ie totlaly flooded. 0 means saturated soil but not flooded. -20 means water water is 20cm below root crown ie its dry.,,,,,,
